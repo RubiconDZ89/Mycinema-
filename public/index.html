@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CinePulse - Streaming Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">CINE<span>PULSE</span></div>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Rechercher un film ou une série...">
+      <button id="searchBtn">🔍</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section-title">
+      <h2 id="gridTitle">Tendances de la semaine</h2>
+    </section>
+    
+    <div class="media-grid" id="mediaGrid"></div>
+  </main>
+
+  <div class="player-modal" id="playerModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">✕</button>
+      
+      <div class="player-container" id="playerContainer"></div>
+
+      <div class="player-controls-bar">
+        <div class="info-zone">
+          <h3 id="modalTitle">Titre de l'œuvre</h3>
+          
+          <!-- Contrôles spécifiques aux séries TV -->
+          <div class="tv-controls" id="tvControls" style="display: none;">
+            <select id="seasonSelect"></select>
+            <select id="episodeSelect"></select>
+          </div>
+        </div>
+        
+        <div class="sources-selector">
+          <label for="sourceSelect">Serveur :</label>
+          <select id="sourceSelect"></select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
